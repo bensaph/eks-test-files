@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: private-cluster
+  region: us-east-1
+
+privateCluster:
+  enabled: true
+
+nodeGroups:
+- name: ng1
+  instanceType: m5.large
+  desiredCapacity: 2
+  privateNetworking: true
+
+managedNodeGroups:
+- name: m1
+  instanceType: m5.large
+  desiredCapacity: 2
+  privateNetworking: true
